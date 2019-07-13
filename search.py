@@ -12,9 +12,9 @@ def entity_function(query):
     entity_res = Entity(query)
     if not entity_res.get_title():
         return False
-    title = entity_res.get_title()[0]
-    typee = entity_res.get_type()[0]
-    url = entity_res.get_url()[0]
+    title = entity_res.get_title()[0] 
+    typee = entity_res.get_type()[0] if entity_res.get_type() else 'Unknown'
+    url = entity_res.get_url()[0] if entity_res.get_url() else 'Unknown'
     description = entity_res.get_description()[0] if entity_res.get_description() else 'Unknown'
     wikipedialink = entity_res.get_wikipedia_link()[0] if entity_res.get_wikipedia_link() else 'Unknown'
     textunder = entity_res.get_wikipedia_link()[1] if entity_res.get_wikipedia_link() else 'Unknown'

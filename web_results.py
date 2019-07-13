@@ -1,9 +1,10 @@
 from load_page import Load_page
+from entity import Entity
 
 class Web_results:
     def __init__(self,query):
-        self.parsed_page = Load_page(query)
-        self.soup = self.parsed_page.get_soup()
+        entity = Entity(query)
+        self.soup = entity.return_soup()
 
     def get_site_title(self):
         total_results = self.soup.find('div',{'class':'web-results'})
@@ -35,11 +36,6 @@ class Web_results:
             self.site_results.append(result)
         return self.site_results
 
-    def get_spell_title(self):
-        return self.parsed_page.get_spell_title()
-    
-    def get_spell_description(self):
-        return self.parsed_page.get_spell_description()
 
 if __name__ == '__main__':
     webresults = Web_results(input('query'))

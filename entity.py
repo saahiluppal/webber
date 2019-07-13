@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 
 class Entity:
     def __init__(self,query):
-        parsed_page = Load_page(query)
-        self.soup = parsed_page.get_soup()
+        self.parsed_page = Load_page(query)
+        self.soup = self.parsed_page.get_soup()
         
     def get_title(self):
         total_entities = self.soup.find('div',{'class':'entity-results'})
@@ -63,7 +63,16 @@ class Entity:
             if result not in self.entity_results:
                 self.entity_results.append(result)
         return self.entity_results
+
+    def return_soup(self):
+        return self.soup
         
+    def get_spell_title(self):
+        return self.parsed_page.get_spell_title()
+        
+    def get_spell_description(self):
+        return self.parsed_page.get_spell_description()
+
 # for testing purpose
 if __name__ == "__main__":
     entity = Entity(input('query'))

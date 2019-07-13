@@ -15,11 +15,16 @@ def entity_function(query):
     title = entity_res.get_title()[0]
     typee = entity_res.get_type()[0]
     url = entity_res.get_url()[0]
-    description = entity_res.get_description()[0]
+    description = entity_res.get_description()[0] if entity_res.get_description() else 'Unknown'
     wikipedialink = entity_res.get_wikipedia_link()[0] if entity_res.get_wikipedia_link() else 'Unknown'
     textunder = entity_res.get_wikipedia_link()[1] if entity_res.get_wikipedia_link() else 'Unknown'
-    return ["Title :: "+title,"Type :: "+typee,url,color.YELLOW+description+color.END,
-    color.BLUE+"Wikipedia :: "+wikipedialink+color.END,color.BLUE+"Text Under :: "+textunder+color.END]
+    if entity_res.get_spell_title():
+        return [color.RED+entity_res.get_spell_title()+color.END,color.RED+entity_res.get_spell_description()+color.END,'\n',
+            "Title :: "+title,"Type :: "+typee,url,color.YELLOW+description+color.END,
+        color.BLUE+"Wikipedia :: "+wikipedialink+color.END,color.BLUE+"Text Under :: "+textunder+color.END]
+    else:
+        return ["Title :: "+title,"Type :: "+typee,url,color.YELLOW+description+color.END,
+        color.BLUE+"Wikipedia :: "+wikipedialink+color.END,color.BLUE+"Text Under :: "+textunder+color.END]
 
 def web_function(query):
     web_res = Web_results(query)
@@ -46,14 +51,13 @@ while True:
     if query=='exit' or query=='break' or query=='quit':
         break
     entity_results = entity_function(query)
-    print('Waiting for 10 secs so your browser might not call me a ROBOT :)')
     time.sleep(10)
     print()
     if entity_results:
         for i in entity_results:
-            print(i)
+            if i:
+                print(i)
         print()
         web_function(query)
     elif entity_results==False:
-        print('No entity found')
         web_function(query)

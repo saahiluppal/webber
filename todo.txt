@@ -1,0 +1,19 @@
+open STRING
+used to open some website on browser
+open amazon,open github etc
+
+search for STRING
+used to search something on google
+search for sahil,search for larry
+
+meaning of STRING
+used to search for meaning of a particular word or phrase
+meaning of decentralization, meaning of depricated
+
+spell STRING
+used to correct the spelling of the word
+spell helowl, spell yahooa
+
+search for STRING on amazon
+used to search for something on amazon
+search for keyboards on amazon

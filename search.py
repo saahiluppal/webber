@@ -51,7 +51,6 @@ while True:
     if query=='exit' or query=='break' or query=='quit':
         break
     entity_results = entity_function(query)
-    time.sleep(10)
     print()
     if entity_results:
         for i in entity_results:

@@ -6,7 +6,8 @@ class Load_page:
         self.response = requests.get('https://www.entireweb.com/web?q='+query)
 
     def get_soup(self,parser='lxml'):
-        self.soup = BeautifulSoup(self.response.content,parser)
+        content = self.response.content
+        self.soup = BeautifulSoup(content,parser)
         advertisements = self.soup.find_all('div',{'class':'web-results lastad'})
         for i in advertisements:
             i.decompose()

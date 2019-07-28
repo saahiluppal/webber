@@ -57,6 +57,8 @@ while True:
             if i:
                 print(i)
         print()
+        time.sleep(3)
         web_function(query)
     elif entity_results==False:
+        time.sleep(3)
         web_function(query)

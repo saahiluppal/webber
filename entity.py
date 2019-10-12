@@ -1,5 +1,7 @@
 from load_page import Load_page
 from bs4 import BeautifulSoup
+from color import Color
+import os
 
 class Entity:
     def __init__(self,query):
@@ -75,11 +77,29 @@ class Entity:
 
 # for testing purpose
 if __name__ == "__main__":
-    entity = Entity(input('query'))
-    print('title::',entity.get_title())
-    print('type:',entity.get_type())
-    print('desription:',entity.get_description())
-    print('url:',entity.get_url())
-    print('wikipedia link:',entity.get_wikipedia_link()[1])
+
+    entity = Entity(input('Query:: '))
+    if not entity.get_title():
+        print('Results Not Found!..')
+        exit()
+    
+    color = Color()
+    os.system('clear')
+    print()
+    if entity.get_spell_title():
+        print(color.GREEN+entity.get_spell_title()+color.END)
+    if entity.get_spell_description():
+        print(color.RED+entity.get_spell_description()+color.END)
+    print()
+    print(f'Title     ::  {entity.get_title()[0]}')
+    print(f'Type      ::  {entity.get_type()[0]}')
+    print('\nDescription :: '+color.YELLOW+f'{entity.get_description()[0]}'+color.END)
+    print()
+    if entity.get_url():
+        print(f'URL        ::  {entity.get_url()[0]}')
+        if not entity.get_wikipedia_link():
+            print()
+    if entity.get_wikipedia_link():
+        print(f'Wikipedia  ::  {entity.get_wikipedia_link()[0]}\n')
 
     

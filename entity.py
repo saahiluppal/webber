@@ -85,21 +85,21 @@ if __name__ == "__main__":
     
     color = Color()
     os.system('clear')
-    print()
     if entity.get_spell_title():
+        print()
         print(color.GREEN+entity.get_spell_title()+color.END)
     if entity.get_spell_description():
         print(color.RED+entity.get_spell_description()+color.END)
     print()
     print(f'Title     ::  {entity.get_title()[0]}')
-    print(f'Type      ::  {entity.get_type()[0]}')
-    print('\nDescription :: '+color.YELLOW+f'{entity.get_description()[0]}'+color.END)
+    type_ = entity.get_type()[0] if entity.get_type() else "Unknown"
+    print(f'Type      ::  {type_}')
+    description = entity.get_description()[0] if entity.get_description() else "Unknown"
+    print('\nDescription :: '+color.YELLOW+f'{description}'+color.END)
     print()
-    if entity.get_url():
-        print(f'URL        ::  {entity.get_url()[0]}')
-        if not entity.get_wikipedia_link():
-            print()
-    if entity.get_wikipedia_link():
-        print(f'Wikipedia  ::  {entity.get_wikipedia_link()[0]}\n')
+    url = entity.get_url()[0] if entity.get_url() else "Unknown"
+    print(f'URL        ::  {url}')
+    wikipedia = entity.get_wikipedia_link()[0] if entity.get_wikipedia_link() else "Unknown"
+    print(f'Wikipedia  ::  {wikipedia}\n')
 
     

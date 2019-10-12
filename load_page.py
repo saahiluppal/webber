@@ -30,7 +30,9 @@ class Load_page:
 
 # for testing purpose
 if __name__=="__main__":
-    page = Load_page(input('query'))
+    page = Load_page(input('Query'))
+    print("This is for debugging purposes")
+    print('Run search.py or entity.py or results.py')
     #print(page.get_soup().prettify())
     page.get_soup()
     print(page.get_spell_title())

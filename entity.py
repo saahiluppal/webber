@@ -79,12 +79,12 @@ class Entity:
 if __name__ == "__main__":
 
     entity = Entity(input('Query:: '))
+    os.system('clear')
     if not entity.get_title():
         print('Results Not Found!..')
         exit()
     
     color = Color()
-    os.system('clear')
     if entity.get_spell_title():
         print()
         print(color.GREEN+entity.get_spell_title()+color.END)

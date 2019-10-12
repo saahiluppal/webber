@@ -1,5 +1,5 @@
 # Webber
-## A command line tool to search for something on internet....
+## WebPage on your terminal..
 
 What this project actually does is when you pass any query into the programme, it scrapes it's results from the entireweb
 search engine and shows it to you..

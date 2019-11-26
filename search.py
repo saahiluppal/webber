@@ -150,21 +150,21 @@ os.system('clear')
 
 if spell_title:
     print()
-    print(color.GREEN + spell_title + color.END)
-    print(color.RED + spell_description + color.END)
+    print(color.GREEN + spell_title + color.DEFAULT)
+    print(color.RED + spell_description + color.DEFAULT)
 
 if entity_titles:
     print()
     print("Title  ::   ",entity_titles[0])
     print("Type   ::   ",entity_types[0] if entity_types else "Unknown")
-    print('\nDescription :: '+color.YELLOW +entity_description[0] + color.END+'\n' if entity_description else "Unknown")
+    print('\nDescription :: '+color.YELLOW +entity_description[0] + color.DEFAULT+'\n' if entity_description else "Unknown")
     print("URL       :: ",entity_url[0] if entity_url else "Unknown")
     print("Wikipedia :: ",entity_wikipedia[0]+'\n' if entity_wikipedia else "Unknown\n")
 
 if site_titles:
     print()
     for title,url,description in zip(site_titles,site_urls,site_descriptions):
-        print(color.BOLD + title + color.END)
-        print(color.CYAN + url + color.END)
+        print(color.BOLD + title + color.DEFAULT)
+        print(color.CYAN + url + color.DEFAULT)
         print(description) 
         print()

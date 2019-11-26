@@ -87,15 +87,15 @@ if __name__ == "__main__":
     color = Color()
     if entity.get_spell_title():
         print()
-        print(color.GREEN+entity.get_spell_title()+color.END)
+        print(color.GREEN+entity.get_spell_title()+color.DEFAULT)
     if entity.get_spell_description():
-        print(color.RED+entity.get_spell_description()+color.END)
+        print(color.RED+entity.get_spell_description()+color.DEFAULT)
     print()
     print(f'Title     ::  {entity.get_title()[0]}')
     type_ = entity.get_type()[0] if entity.get_type() else "Unknown"
     print(f'Type      ::  {type_}')
     description = entity.get_description()[0] if entity.get_description() else "Unknown"
-    print('\nDescription :: '+color.YELLOW+f'{description}'+color.END)
+    print('\nDescription :: '+color.YELLOW+f'{description}'+color.DEFAULT)
     print()
     url = entity.get_url()[0] if entity.get_url() else "Unknown"
     print(f'URL        ::  {url}')

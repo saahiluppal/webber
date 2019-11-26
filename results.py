@@ -52,15 +52,15 @@ if __name__ == '__main__':
 
     if webresults.get_spell_title():
         print()
-        print(color.GREEN + webresults.get_spell_title() + color.END)
+        print(color.GREEN + webresults.get_spell_title() + color.DEFAULT)
     if webresults.get_spell_description():
-        print(color.RED + webresults.get_spell_description() + color.END)
+        print(color.RED + webresults.get_spell_description() + color.DEFAULT)
 
     try: epochs = len(webresults.get_site_title())
     except: print("Results Not Found!...");exit()
     print()
     for epoch in range(epochs):
-        print(color.BOLD + webresults.get_site_title()[epoch] + color.END)
-        print(color.CYAN + webresults.get_site_url()[epoch] + color.END)
+        print(color.BOLD + webresults.get_site_title()[epoch] + color.DEFAULT)
+        print(color.CYAN + webresults.get_site_url()[epoch] + color.DEFAULT)
         print(webresults.get_site_description()[epoch])
         print()

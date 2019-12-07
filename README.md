@@ -5,11 +5,11 @@ What this project actually does is when you pass any query into the programme, i
 search engine and shows it to you..
 
 ## Libraries Required ..
-- pip install requests
+- requests
 
-- pip install bs4
+- bs4
 
-- pip install lxml
+- lxml
 
 lxml is default parser library for webber. You can use html.parser instead if you want.
 

@@ -4,7 +4,7 @@
 What this project actually does is when you pass any query into the programme, it scrapes it's results from the entireweb
 search engine and shows it to you..
 
-## Libraries needed ..
+## Libraries Required ..
 - pip install requests
 
 - pip install bs4
